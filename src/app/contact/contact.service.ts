@@ -15,6 +15,24 @@ export class ContactService {
       .pipe(catchError(this.handleError));
   }
 
+  getContact(id): Observable<any> {
+    return this._http
+      .get(this._baseURL + '/' + id)
+      .pipe(catchError(this.handleError))
+  }
+
+  newContact(contact): Observable<any> {
+    return this._http
+    .post(this._baseURL, contact)
+    .pipe(catchError(this.handleError))
+  }
+
+  updateContact(contact):  Observable<any> {
+    return this._http
+    .put(this._baseURL + '/' + contact._id, contact)
+    .pipe(catchError(this.handleError))
+  }
+  
   /***  Error Handling **************************************/
 
   private handleError(error: HttpErrorResponse) {

@@ -1,0 +1,31 @@
+<div *ngIf="dataLoaded">
+<h2>{{ title }}</h2>
+<div>
+  <h3 *ngIf="contact.firstName || contact.lastName">
+    <span *ngIf="contact.firstName">{{ contact.firstName }}</span>
+    <span *ngIf="contact.lastName">&nbsp;{{ contact.lastName}}</span>
+  </h3>
+  <div>
+    <label>Id: </label>{{ contact.id }}</div>
+  <div>
+    <label>Last Name: </label>
+    <input [(ngModel)]="contact.lastName"/>
+  </div>
+  <div>
+    <label>First Name: </label>
+    <input [(ngModel)]="contact.firstName"/>
+  </div>
+  <div>
+    <label>Email: </label>
+    <input [(ngModel)]="contact.email"/>
+  </div>
+  <div>
+    <label>Company: </label>
+    <input [(ngModel)]="contact.company"/>
+  </div>
+  <p>
+    <button (click)="buttonClick('save')">Save</button>
+    <button (click)="buttonClick('cancel')">Cancel</button>
+  </p>
+</div>
+</div>

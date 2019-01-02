@@ -1,10 +1,13 @@
 import { Routes } from '@angular/router';
-import { ContactComponent } from './contact.component';
+import { ContactListComponent } from '../contact/contact-list/contact-list.component';
+import { ContactEditComponent } from './contact-edit/contact-edit.component';
 
 export const ContactRoutes: Routes = [{
   path: 'contacts',
-  component: ContactComponent,
+  //component: ContactComponent,
   children: [
-        { path: '', component: ContactComponent }
+        { path: '', component: ContactListComponent },
+        { path: 'new', component: ContactEditComponent, data: {new: true}},
+        { path: ':id', component: ContactEditComponent, data: {new: false}}
     ],
 }];

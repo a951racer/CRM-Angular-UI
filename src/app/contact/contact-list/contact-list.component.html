@@ -1,0 +1,24 @@
+<h1>Contact Manager</h1>
+<h2>Contacts</h2>
+<div>
+    <button (click)="addContact()">New Contact</button>
+    <p></p>
+  <table [ngClass]="'contact-list'" id="contacts">
+    <thead>
+      <tr [ngClass]="'table-row'">
+        <th [ngClass]="'column-header'"></th>
+        <th *ngFor="let column of columns" [ngClass]="'column-header'">{{column}}</th>
+      </tr>
+    </thead>
+    <tr [ngClass]="'table-row'" *ngFor="let contact of contacts">
+      <td><button (click)="editContact(contact._id)">Edit</button></td>
+      <td>{{contact.lastName}}</td>
+      <td>{{contact.firstName}}</td>
+      <td>{{contact.company}}</td>
+      <td>{{contact.email}}</td>
+    </tr>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+    

@@ -46,7 +46,6 @@ export class HomeComponent implements OnInit {
   onClick(buttonName) {
     switch (buttonName) {
       case 'Contacts':
-        console.log('clicked contacts button');
         this._router.navigate(['/contacts']);
     }
   }
