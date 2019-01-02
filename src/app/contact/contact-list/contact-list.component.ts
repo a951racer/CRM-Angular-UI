@@ -30,7 +30,7 @@ export class ContactListComponent implements OnInit {
     this._router.navigate(['contacts/' + id]);
   }
 
-  deleteContact() {
-    
+  deleteContact(id) {
+    this._router.navigate(['contacts/delete/' + id]);    
   }
 }

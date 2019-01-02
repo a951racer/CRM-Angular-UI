@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ContactRoutes } from './contact.routes';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactEditComponent } from './contact-edit/contact-edit.component';
+import { ContactDeleteComponent } from './contact-delete/contact-delete.component';
 import { ContactService } from './contact.service';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ContactService } from './contact.service';
   ],
   declarations: [
     ContactListComponent,
-    ContactEditComponent
+    ContactEditComponent,
+    ContactDeleteComponent
   ],
   providers: [
     ContactService

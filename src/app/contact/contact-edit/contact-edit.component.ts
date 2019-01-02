@@ -1,9 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
 import { ContactService } from '../contact.service';
-import { Observable } from 'rxjs';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-contact-edit',
@@ -17,9 +14,8 @@ export class ContactEditComponent implements OnInit {
   id: string;
   contact: any;
   dataLoaded = false;
+  title: string;
 
-
-  title = "CONTACT";
   constructor(private _contactService: ContactService,
               private route: ActivatedRoute,
               private router: Router,
@@ -35,9 +31,11 @@ export class ContactEditComponent implements OnInit {
     if (!this.isNewContact) {
       this._contactService.getContact(this.id).subscribe(contact => {
           this.contact = contact;
+          this.title = "EDIT CONTACT"
           this.dataLoaded = true;
         })
-    } else{
+    } else {
+      this.title = "NEW CONTACT";
       this.contact = new Object();
       this.dataLoaded = true;
     };

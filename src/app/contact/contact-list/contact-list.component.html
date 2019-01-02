@@ -11,7 +11,10 @@
       </tr>
     </thead>
     <tr [ngClass]="'table-row'" *ngFor="let contact of contacts">
-      <td><button (click)="editContact(contact._id)">Edit</button></td>
+      <td>
+        <button (click)="editContact(contact._id)">Edit</button>
+        <button (click)="deleteContact(contact._id)">Delete</button>
+      </td>
       <td>{{contact.lastName}}</td>
       <td>{{contact.firstName}}</td>
       <td>{{contact.company}}</td>

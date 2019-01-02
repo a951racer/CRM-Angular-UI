@@ -33,6 +33,12 @@ export class ContactService {
     .pipe(catchError(this.handleError))
   }
   
+  deleteContact(contact):  Observable<any> {
+    return this._http
+    .delete(this._baseURL + '/' + contact._id, contact)
+    .pipe(catchError(this.handleError))
+  }
+  
   /***  Error Handling **************************************/
 
   private handleError(error: HttpErrorResponse) {
